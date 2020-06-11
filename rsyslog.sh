@@ -26,6 +26,10 @@ zypper ref
 echo 'Repo is successfully added to the system...'
 sleep 1
 
+# re-enabling previously disabled repos and refreshing them as well
+zypper mr -e -a
+zypper ref
+
 # installing rsyslog-diag-tools, rsyslog-doc and rsyslog (who might be installed by default)
 echo 'Installing rsyslog packages...'
 zypper --non-interactive  in rsyslog-d*
